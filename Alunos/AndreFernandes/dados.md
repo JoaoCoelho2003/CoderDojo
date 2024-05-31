@@ -1,9 +1,9 @@
 # Dados Do Educando
 
-- *Nome:* André Vieira Fernandes
+- **Nome:** André Vieira Fernandes
 
-- *Idade:* 15
+- **Idade:** 15
 
-- *Cinturão:* Verde
+- **Cinturão:** Verde
 
-- *Linguagem:* Python
+- **Linguagem:** Python
