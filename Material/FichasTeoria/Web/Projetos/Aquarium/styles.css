@@ -1,0 +1,373 @@
+/* Basic reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+}
+
+/* Main aquarium container */
+.aquarium {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background-color: #3498db;
+    border: 10px solid #5e3a08;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Water styling */
+.water {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #30bbff, #0b83c6);
+    opacity: 0.8;
+}
+
+/* Sand at bottom */
+.sand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #e2cd9f;
+    border-top: 4px solid #d4bc88;
+}
+
+/* Fish base styling */
+.fish {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+}
+
+.fish-body {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.fish-tail {
+    position: absolute;
+    right: -15px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid;
+    border-bottom: 10px solid transparent;
+}
+
+.fish-eye {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+/* Individual fish styling */
+.fish-orange {
+    top: 100px;
+    left: 150px;
+    animation: swim-right 8s infinite linear;
+}
+
+.fish-orange .fish-body {
+    background-color: #ff7f00;
+}
+
+.fish-orange .fish-tail {
+    border-left-color: #ff7f00;
+}
+
+.fish-blue {
+    top: 200px;
+    left: 400px;
+    animation: swim-left 10s infinite linear;
+}
+
+.fish-blue .fish-body {
+    background-color: #4878cd;
+}
+
+.fish-blue .fish-tail {
+    border-left-color: #4878cd;
+    right: auto;
+    left: -15px;
+    transform: rotate(180deg);
+}
+
+.fish-blue .fish-eye {
+    left: auto;
+    right: 15px;
+}
+
+.fish-purple {
+    top: 250px;
+    left: 200px;
+    animation: swim-right 12s infinite linear;
+}
+
+.fish-purple .fish-body {
+    background-color: #9b59b6;
+}
+
+.fish-purple .fish-tail {
+    border-left-color: #9b59b6;
+}
+
+/* Seaweed styling */
+.seaweed {
+    position: absolute;
+    bottom: 80px;
+    width: 20px;
+    background-color: #2ecc71;
+    border-radius: 50px 50px 0 0;
+    animation: sway 4s ease-in-out infinite alternate;
+}
+
+.seaweed-1 {
+    left: 100px;
+    height: 120px;
+    animation-delay: 0.5s;
+}
+
+.seaweed-2 {
+    left: 400px;
+    height: 150px;
+}
+
+.seaweed-3 {
+    right: 150px;
+    height: 100px;
+    animation-delay: 0.8s;
+}
+
+/* Bubble styling */
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: float 8s infinite ease-in;
+}
+
+.bubble-1 {
+    bottom: 40px;
+    left: 150px;
+    width: 15px;
+    height: 15px;
+    animation-duration: 6s;
+}
+
+.bubble-2 {
+    bottom: 20px;
+    left: 450px;
+    width: 20px;
+    height: 20px;
+    animation-duration: 7s;
+}
+
+.bubble-3 {
+    bottom: 60px;
+    left: 600px;
+    width: 10px;
+    height: 10px;
+    animation-duration: 5s;
+}
+
+.bubble-4 {
+    bottom: 30px;
+    left: 300px;
+    width: 12px;
+    height: 12px;
+    animation-duration: 8s;
+}
+
+.bubble-5 {
+    bottom: 50px;
+    left: 700px;
+    width: 18px;
+    height: 18px;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.treasure-chest {
+    position: absolute;
+    bottom: 60px;
+    right: 100px;
+    width: 80px;
+    height: 60px;
+    z-index: 2;
+}
+
+.chest-body {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 40px;
+    background-color: #8B4513;
+    border-radius: 10px;
+    border: 3px solid #5e3a08;
+}
+
+.chest-lid {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 20px;
+    background-color: #A0522D;
+    border-radius: 10px 10px 0 0;
+    border: 3px solid #5e3a08;
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+.treasure-chest:hover .chest-lid {
+    transform: rotateX(-80deg);
+}
+
+.crab {
+    position: absolute;
+    bottom: 80px;
+    left: 200px;
+    width: 60px;
+    height: 40px;
+    z-index: 2;
+    transition: transform 0.3s;
+}
+
+.crab:hover {
+    transform: translateY(-15px);
+}
+
+.crab-body {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+}
+
+.crab-eye {
+    position: absolute;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.crab-eye-left {
+    left: 15px;
+}
+
+.crab-eye-right {
+    right: 15px;
+}
+
+.crab-claw {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background-color: #e74c3c;
+    border-radius: 50% 50% 50% 0;
+}
+
+.crab-claw-left {
+    left: -18px;
+    top: 10px;
+    transform: rotate(-45deg);
+}
+
+.crab-claw-right {
+    right: -18px;
+    top: 10px;
+    transform: rotate(45deg) scaleX(-1);
+}
+
+.crab-leg {
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    background-color: #e74c3c;
+}
+
+.crab-leg-1 {
+    left: 5px;
+    bottom: 5px;
+    transform: rotate(45deg);
+}
+
+.crab-leg-2 {
+    left: 15px;
+    bottom: 2px;
+    transform: rotate(30deg);
+}
+
+.crab-leg-3 {
+    right: 15px;
+    bottom: 2px;
+    transform: rotate(-30deg);
+}
+
+.crab-leg-4 {
+    right: 5px;
+    bottom: 5px;
+    transform: rotate(-45deg);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-450px);
+        opacity: 0;
+    }
+}
+
+@keyframes sway {
+    0% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes swim-right {
+    0% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(900px);
+    }
+}
+
+@keyframes swim-left {
+    0% {
+        transform: translateX(900px) scaleX(-1);
+    }
+    100% {
+        transform: translateX(-100px) scaleX(-1);
+    }
+}
